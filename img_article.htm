@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="applicable-device"content="pc,mobile">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta http-equiv="Cache-Control" content="no-transform " />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<title>{dede:field.title /}_河南嵩山少林寺武术学院</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link rel="stylesheet" type="text/css" href="/templets/default/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="/templets/default/css/swiper.min.css"/>
+<link rel="stylesheet" type="text/css" href="/templets/default/css/amazeui.css"/>
+<script type="text/javascript" src="/templets/default/js/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="/templets/default/js/swiper.min.js" ></script>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+{dede:include filename="head.htm"/}
+<div class="head-img"> <img src="/templets/default/img/line.jpg.jpg" width="100%"/> </div>
+<div class="phone-head-img"> <img src="/templets/default/img/phone-head.jpg" width="100%"/> </div>
+<ul class="phone-main-tab">
+ <li><a href="/bangzhu/"><img src="/templets/default/img/phone-img (4).jpg"/>
+    <p>武校新闻</p>
+    </a></li>
+  <li><a href="/wenwu.html"><img src="/templets/default/img/phone-img (5).jpg"/>
+    <p>教学内容</p>
+    </a></li>
+  <li><a href="http://bwt.zoosnet.net/LR/Chatpre.aspx?id=BWT87847229&lng=cn" target="_blank"><img src="/templets/default/img/phone-img (6).jpg"/>
+    <p>预约报名</p>
+    </a></li>
+  <li><a href="/gzsl/"><img src="/templets/default/img/phone-img (7).jpg"/>
+    <p>少林资讯</p>
+    </a></li>
+</ul>
+<div class="main-wrapper container clearfix"> {dede:include filename="left.htm"/}
+  <div class="content-right">
+    <div class="right-title clearfix">
+      <ul class="title-left-list fl">
+        <li><a>当前位置<big>></big></a></li>
+        {dede:field name='position'/}
+      </ul>
+      <ul class="title-right-list fr">
+         <li><a href="/">返回首页<big>·</big></a></li>
+        <li><a  href="/zsjz.html">招生简章<big>·</big></a></li>
+        <li><a href="/biye.html">毕业去向</a></li>
+      </ul>
+      <ul class="phone-title-right fr">
+        <li><a href="/">返回首页</a></li>
+      </ul>
+    </div>
+    <div >
+    <div class="sl-kbb3">
+<h2>{dede:field.title/}</h2>
+<p class="art_sm">{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}      来源：{dede:field.source/}</p>
+            <div class="mod18"> <span id="prev" class="btn prev"></span> <span id="next" class="btn next"></span> <span id="prevTop" class="btn prev"></span> <span id="nextTop" class="btn next"></span>
+              <div id="picBox" class="picBox">
+                <ul class="cf">
+                  {dede:field name='imgurls' alt='图片输出区'}
+                  [field:pagestyle runphp='yes'] @me= (@me==1 ? '
+                  <li>' : '');[/field:pagestyle]
+                  <li><a href='[field:linkurl/]' [field:pagestyle runphp='yes'] @me= (@me==1 ? 'class="pic"' : ''); [/field:pagestyle]> <img src='[field:imgsrc/]' width="580" id='bigimg' [field:imgwidth /] alt='[field:alttext /]' border='0' /> </a> <a href='[field:linkurl/]' [field:pagestyle runphp='yes']@me = (@me==1 ? 'class="title"' : '');[/field:pagestyle]> [field:title /] </a></li>
+                  <span>[field:alttext /]</span> [field:pagestyle runphp='yes'] @me = (@me==1 ? '
+                  </li>
+                  ' : ''); [/field:pagestyle]
+                  {/dede:field}
+                </ul>
+              </div>
+              <div id="listBox" class="listBox">
+                <ul class="cf">
+                  {dede:field name='imgurls' alt='图片输出区'}
+                  [field:pagestyle runphp='yes'] @me= (@me==1 ? '
+                  <li>' : '');[/field:pagestyle] <img src='[field:imgsrc/]' id='bigimg' [field:imgwidth /] alt='[field:alttext /]' border='0' /> [field:pagestyle runphp='yes'] @me = (@me==1 ? '</li>
+                  ' : ''); [/field:pagestyle]
+                  {/dede:field}
+                </ul>
+              </div>
+            </div>
+
+
+
+
+<div class="news_info">{dede:field.body/}</div>
+
+ <script type="text/javascript">
+(function(){
+	
+	function G(s){
+		return document.getElementById(s);
+	}
+	
+	function getStyle(obj, attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else{
+			return getComputedStyle(obj, false)[attr];
+		}
+	}
+	
+	function Animate(obj, json){
+		if(obj.timer){
+			clearInterval(obj.timer);
+		}
+		obj.timer = setInterval(function(){
+			for(var attr in json){
+				var iCur = parseInt(getStyle(obj, attr));
+				iCur = iCur ? iCur : 0;
+				var iSpeed = (json[attr] - iCur) / 5;
+				iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+				obj.style[attr] = iCur + iSpeed + 'px';
+				if(iCur == json[attr]){
+					clearInterval(obj.timer);
+				}
+			}
+		}, 30);
+	}
+
+	var oPic = G("picBox");
+	var oList = G("listBox");
+	
+	var oPrev = G("prev");
+	var oNext = G("next");
+	var oPrevTop = G("prevTop");
+	var oNextTop = G("nextTop");
+
+	var oPicLi = oPic.getElementsByTagName("li");
+	var oListLi = oList.getElementsByTagName("li");
+	var len1 = oPicLi.length;
+	var len2 = oListLi.length;
+	
+	var oPicUl = oPic.getElementsByTagName("ul")[0];
+	var oListUl = oList.getElementsByTagName("ul")[0];
+	var w1 = oPicLi[0].offsetWidth;
+	var w2 = oListLi[0].offsetWidth;
+
+
+	oPicUl.style.width = w1 * len1 + "px";
+	oListUl.style.width = w2 * len2 + "px";
+
+	var index = 0;
+	
+	var num = 5;
+	var num2 = Math.ceil(num / 2);
+
+	function Change(){
+
+		Animate(oPicUl, {left: - index * w1});
+		
+		if(index < num2){
+			Animate(oListUl, {left: 0});
+		}else if(index + num2 <= len2){
+			Animate(oListUl, {left: - (index - num2 + 1) * w2});
+		}else{
+			Animate(oListUl, {left: - (len2 - num) * w2});
+		}
+
+		for (var i = 0; i < len2; i++) {
+			oListLi[i].className = "";
+			if(i == index){
+				oListLi[i].className = "on";
+			}
+		}
+	}
+	
+	oNextTop.onclick = oNext.onclick = function(){
+		index ++;
+		index = index == len2 ? 0 : index;
+		Change();
+	}
+
+	oPrevTop.onclick = oPrev.onclick = function(){
+		index --;
+		index = index == -1 ? len2 -1 : index;
+		Change();
+	}
+
+	for (var i = 0; i < len2; i++) {
+		oListLi[i].index = i;
+		oListLi[i].onclick = function(){
+			index = this.index;
+			Change();
+		}
+	}
+	
+})()
+</script>
+
+</div>
+<div class="wztj">
+       <p>{dede:prenext get='pre'/}</p>
+       <p>{dede:prenext get='next'/} </p>
+      </div>
+
+      
+      
+      
+       {dede:include filename="bottom.htm"/}    </div>
+    {dede:include filename="bottom2.htm"/}
+  </div>
+   <div class="phone" style="width:90%; margin:0 auto;"> <a href="tel:15639777188"><img src="/templets/default/img/110.png" style="float:left; width:150px;    display: inline-table;"></a><a href="http://bwt.zoosnet.net/LR/Chatpre.aspx?id=BWT87847229&lng=cn" target="_blank"> <img src="/templets/default/img/111.png" style="float:right;width:150px;"> </a></div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

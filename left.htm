@@ -1,0 +1,26 @@
+<div class="content-left fl">
+    <div class="left-sec1">
+      <ul class="left-list">
+     <li   {dede:field name=typeid runphp="yes"}(@me=="")? @me=" class='active' ":@me="";{/dede:field}><a href="/">网站首页</a></li>
+     <li {dede:field name=typeid runphp="yes"}(@me=="1")? @me=" class='active '":@me="";{/dede:field}><a href="/siyuan.html">学校简介</a></li>
+     <li {dede:field name=typeid runphp="yes"}(@me=="2")? @me=" class='active' ":@me="";{/dede:field}><a href="/zsjz.html">招生简章</a></li>
+       <li {dede:field name=typeid runphp="yes"}(@me=="5")? @me=" class='active' ":@me="";{/dede:field}><a href="/biye.html">毕业去向</a></li>
+     <li {dede:field name=typeid runphp="yes"}(@me=="3")? @me=" class='active' ":@me="";{/dede:field}><a href="/wenwu.html">课程安排</a></li>
+       
+       <li {dede:field name=typeid runphp="yes"}(@me=="6")? @me=" class='active' ":@me="";{/dede:field}><a href="/lx.html">联系我们</a></li>
+      </ul>
+    </div>
+    <ul class="left-list-2">
+      <li><a href="/shoufei.html"><img src="/templets/default/img/left-img (5).jpg"/><span>招生收费</span></a></li>
+      <li><a href="/gonggao/241.html"><img src="/templets/default/img/left-img (6).jpg"/><span>学武指南</span></a></li>
+      <li><a href="http://bwt.zoosnet.net/LR/Chatpre.aspx?id=BWT87847229&lng=cn" target="_blank"><img src="/templets/default/img/left-img (1).jpg"/><span>预约报名</span></a></li>
+      <li><a href="/lx.html"><img src="/templets/default/img/left-img (2).jpg"/><span>来校路线</span></a></li>
+    </ul>
+    <div class="ad"> <a  href="http://bwt.zoosnet.net/LR/Chatpre.aspx?id=BWT87847229&lng=cn" target="_blank"><img src="/templets/default/img/left-img (1).png" /></a> </div>
+    <ul class="work-list">
+     
+     {dede:arclist  titlelen=36   orderby='rand'   row='6' typeid='9,10,11,26,4,19'}
+      <li><i class="red-tip"></i><a href="[field:arcurl/]" class="text-nowrap1">[field:title/]</a></li>
+       {/dede:arclist}  
+    </ul>
+  </div>

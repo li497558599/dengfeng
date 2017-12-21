@@ -1,0 +1,10 @@
+    <img src="/templets/default/img/right-bottom.jpg" class="right-bottom"/> 
+<ul class="push-list">
+     
+     {dede:arclist  titlelen=50   orderby='click'   row='10' typeid='15,4,26,11,10,9,19'}
+      <li><i class="red-tip"></i><a  href="[field:arcurl/]">[field:title/]</a>
+        <time>[field:pubdate function="MyDate('Y-m-d',@me)"/]</time>
+      </li>
+         {/dede:arclist} 
+      
+    </ul>

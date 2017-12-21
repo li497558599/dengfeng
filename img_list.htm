@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="applicable-device"content="pc,mobile">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta http-equiv="Cache-Control" content="no-transform " />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<title>{dede:field.seotitle/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link rel="stylesheet" type="text/css" href="/templets/default/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="/templets/default/css/swiper.min.css"/>
+<link rel="stylesheet" type="text/css" href="/templets/default/css/amazeui.css"/>
+<script type="text/javascript" src="/templets/default/js/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="/templets/default/js/swiper.min.js" ></script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="head-img"> <img src="/templets/default/img/line.jpg.jpg" width="100%"/> </div>
+<div class="phone-head-img"> <img src="/templets/default/img/phone-head.jpg" width="100%"/> </div>
+<ul class="phone-main-tab">
+  <li><a href="/bangzhu/"><img src="/templets/default/img/phone-img (4).jpg"/>
+    <p>武校新闻</p>
+    </a></li>
+  <li><a href="/wenwu.html"><img src="/templets/default/img/phone-img (5).jpg"/>
+    <p>教学内容</p>
+    </a></li>
+  <li><a href="http://bwt.zoosnet.net/LR/Chatpre.aspx?id=BWT87847229&lng=cn" target="_blank"><img src="/templets/default/img/phone-img (6).jpg"/>
+    <p>预约报名</p>
+    </a></li>
+  <li><a href="/gzsl/"><img src="/templets/default/img/phone-img (7).jpg"/>
+    <p>少林资讯</p>
+    </a></li>
+</ul>
+<div class="main-wrapper container clearfix"> {dede:include filename="left.htm"/}
+  <div class="content-right">
+    <div class="right-title clearfix">
+      <ul class="title-left-list fl">
+        <li><a>当前位置<big>></big></a></li>
+        {dede:field name='position'/}
+      </ul>
+      <ul class="title-right-list fr">
+        <li><a href="/">返回首页<big>·</big></a></li>
+        <li><a  href="/zsjz.html">招生简章<big>·</big></a></li>
+        <li><a href="/biye.html">毕业去向</a></li>
+      </ul>
+      <ul class="phone-title-right fr">
+          <li><a href="/">返回首页</a></li>
+      </ul>
+    </div>
+    <div >
+    <div class="sl-kbb2">
+<h2 > {dede:field name='typename'/}</h2>
+
+
+ 
+<div class="list2">		  
+     <ul style="padding-left: 8px;">
+{dede:list orderby="pubdate" pagesize='9' titlelen='30' }  
+     <li><a href="[field:arcurl/]" target="_blank"><img src="[field:picname function='str_replace("-lp","",@me)'/]" alt="[field:title/]"></a>
+            <h2><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h2>
+          </li>
+   {/dede:list}
+     </ul>
+       </div>
+       
+
+
+</div>
+<div class="page">
+
+{dede:pagelist listitem="info,index,end,pre,next,pageno,option"listsize="2"/}
+</div>
+      
+      
+      
+       {dede:include filename="bottom.htm"/}    </div>
+    {dede:include filename="bottom2.htm"/}
+  </div>
+  <div class="phone" style="width:90%; margin:0 auto;"> <a href="tel:15639777188"><img src="/templets/default/img/110.png" style="float:left; width:150px;    display: inline-table;"></a><a href="http://bwt.zoosnet.net/LR/Chatpre.aspx?id=BWT87847229&lng=cn" target="_blank"> <img src="/templets/default/img/111.png" style="float:right;width:150px;"> </a></div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>
